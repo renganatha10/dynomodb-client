@@ -2,7 +2,8 @@ import * as React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import Connection from './Pages/Connection';
-import Databases from './Pages/Databases';
+import TableItems from './Pages/TableItem';
+import Tables from './Pages/Tables';
 
 import GlobalStyles from './globalStyles';
 
@@ -13,7 +14,8 @@ export default class Routes extends React.PureComponent {
         <React.Fragment>
           <GlobalStyles />
           <Route exact={true} path="/" component={Connection} />
-          <Route exact={true} path="/database" component={Databases} />
+          <Route exact={true} path="/tables" component={Tables} />
+          <Route exact={true} path="/tableitems" component={TableItems} />
         </React.Fragment>
       </BrowserRouter>
     );

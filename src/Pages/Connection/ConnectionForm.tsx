@@ -1,4 +1,4 @@
-import { Button, Form, Icon, Input, Select, Tooltip } from 'antd';
+import { Button, Form, Icon, Input, notification, Select, Tooltip } from 'antd';
 import { FormComponentProps } from 'antd/lib/form';
 import * as React from 'react';
 import styled from 'styled-components';
@@ -15,8 +15,19 @@ class RegistrationForm extends React.PureComponent<FormComponentProps> {
     e.preventDefault();
 
     this.props.form.validateFieldsAndScroll(async (err, values) => {
+      notification.error({ message: 'some terr' });
       if (!err) {
-        console.log('Received values of form: ', values);
+        try {
+          await fetch('http://localhost:3000/connect', {
+            body: JSON.stringify(values),
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            method: 'POST',
+          }).then(r => r.json());
+        } catch (err) {
+          notification.error({ message: 'some terr' });
+        }
       }
     });
   };

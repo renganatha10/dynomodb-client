@@ -14,7 +14,7 @@ const Container = styled(Layout)`
 `;
 
 const StyledContent = styled(Content)`
-  margin: 24px 16px 0;
+  margin: 24px 16px;
 `;
 
 const StyleHeader = styled(Header)`
