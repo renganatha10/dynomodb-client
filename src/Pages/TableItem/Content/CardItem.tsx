@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-import RowItem from '../RowItem';
+import RowItem from '../RowItems';
 
 class CardItem extends React.PureComponent<any, any> {
   public render() {
-    const { tableItem } = this.props;
+    const { tableItem, path, hierarchy } = this.props;
 
     return Object.keys(tableItem).map(tableItemKey => {
       const rowItemKeyValue = tableItem[tableItemKey];
@@ -13,6 +13,8 @@ class CardItem extends React.PureComponent<any, any> {
 
       return (
         <RowItem
+          path={path}
+          hierarchy={hierarchy}
           key={`${tableItemValue}${tableItemKey}`}
           tableItemDataType={tableItemDataType}
           columnName={tableItemKey}

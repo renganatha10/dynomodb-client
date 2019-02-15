@@ -41,7 +41,7 @@ class TableItem extends React.PureComponent<ITableItemProps, IState> {
         >
           {showHoverButtons && <CardHoverBtns />}
           <Row>
-            <CardItem tableItem={tableItem} />
+            <CardItem hierarchy={0} path={''} tableItem={tableItem} />
           </Row>
         </RelativeCard>
       </Row>
@@ -53,5 +53,6 @@ export default TableItem;
 
 const RelativeCard = styled(Card)`
   position: relative;
+  padding-top: 10px !important;
   /* box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.2); */
 `;
